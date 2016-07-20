@@ -1,0 +1,1 @@
+// JavaScript Documentdefine(function(){	//文本框获取焦点和失去焦点	function search(obj,e1,e2){		obj.bind(e1,function(){			if($(this).val()==this.defaultValue){				$(this).val("");				}			})		obj.bind(e2,function(){			if($(this).val()==""){				$(this).val(this.defaultValue);				}			})		}				return{			search:search			}	})

@@ -1,0 +1,1 @@
+// JavaScript Documentdefine(function(){	function slider(){		$("#focusBox").slide( { mainCell:".bd ul",effect:"topLoop",autoPlay:true})		}	return{		slider:slider		}	});

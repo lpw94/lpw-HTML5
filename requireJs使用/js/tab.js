@@ -1,0 +1,1 @@
+// JavaScript Documentdefine(function(){	//TAB选项卡切换	function tab1(o1,o2,c,e){		o1.each(function(i){			$(this).bind(e,function(){				o2.hide().eq(i).show();				$(this).addClass(c).siblings().removeClass(c);			})		})  	}		return{		tab1:tab1		}	})
