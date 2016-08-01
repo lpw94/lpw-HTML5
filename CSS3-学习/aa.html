@@ -1,10 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<title></title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .out{
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+        }
+        .out .img li{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .out .img li img{
+            width: 100%;
+            height: 100%;
+        }
+        .out .num{
+            position: absolute;
+            left:0;
+            bottom: 20px;
+            text-align: center;
+            font-size: 0;
+            width: 100%;
+        }
+        .out .btn{
+            position: absolute;
+            top:50%;
+            margin-top: -30px;
+            width: 30px;
+            height: 60px;
+            background-color: aliceblue;
+            color: black;
+            text-align: center;
+            line-height: 60px;
+            font-size: 40px;
+            display: none;
+        }
+        .out .num li{
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            font-size: 18px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .out .num li.active{
+            background-color: red;
+        }
+        .out .left{
+            left: 0;
+        }
+        .out .right{
+            right: 0;
+        }
+        .out:hover .btn{
+            display: block;
+            color: white;
+            font-weight: 900;
+            background-color: black;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        .out img {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-	
+     <div class="out">
+         <ul class="img">
+             <li><a href="#"><img src="img/1.jpg" alt=""></a></li>
+             <li><a href="#"><img src="img/2.jpg" alt=""></a></li>
+             <li><a href="#"><img src="img/3.jpg" alt=""></a></li>
+             <li><a href="#"><img src="img/4.jpg" alt=""></a></li>
+             <li><a href="#"><img src="img/11.jpg" alt=""></a></li>
+             
+         </ul>
+
+         <ul class="num">
+             <!--<li class="active">1</li>-->
+             <!--<li>2</li>-->
+             <!--<li>3</li>-->
+             <!--<li>4</li>-->
+             <!--<li>5</li>-->
+         </ul>
+
+         <div class="left btn"><</div>
+         <div class="right btn">></div>
+
+     </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            var size=$(".img li").size();
+            for (var i= 1;i<=size;i++){
+                var li="<li>"+i+"</li>";
+                $(".num").append(li);
+            }
+            $(".num li").eq(0).addClass("active");
+
+
+            $(".num li").mouseover(function(){
+               $(this).addClass("active").siblings().removeClass("active");
+               var index=$(this).index();
+               i=index;
+               $(".img li").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+            });
+
+
+        i=0;
+        var t=setInterval(move,3000);
+
+        function move(set){
+        	if(set > 0 || set == undefined){
+        		i++
+        	}else{
+        		i--;
+        	}
+            
+            
+            if(i==size){
+            	i=0;
+            }else if(i==-1){
+                i=size-1;
+            }
+//          if (set<0) {
+//					num--;
+//				} else{
+//					num++;
+//				}
+//				
+//				if (num>size) {
+//					num = 0;
+//				}else if(num<0){
+//					num = size - 1;
+//				}
+				
+				
+            $(".num li").eq(i).addClass("active").siblings().removeClass("active");
+            $(".img li").eq(i).stop().fadeIn(1000).siblings().stop().fadeOut(1000);
+        }
+
+//      function moveL(){
+//          i--;
+//          if(i==-1){
+//              i=size-1;
+//          }
+//          $(".num li").eq(i).addClass("active").siblings().removeClass("active");
+//          $(".img li").eq(i).stop().fadeIn(1000).siblings().stop().fadeOut(1000);
+//      }
+
+        $(".out").hover(function(){
+            clearInterval(t);
+        },function(){
+            t=setInterval(move,3000);
+        });
+
+        $(".out .right").click(function(){
+            move(1)
+        });
+        $(".out .left").click(function(){
+           move(-1)
+        })
+
+        });
+    </script>
+
 </body>
 </html>

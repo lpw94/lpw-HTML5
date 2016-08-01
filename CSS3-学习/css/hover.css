@@ -11,7 +11,7 @@ a:hover{text-decoration:none;}
 
 
 /*老师照片*/
-.bodyCon07{background:url(../images/dy_pic091.jpg);width:100%; overflow:hidden;}
+.bodyCon07{background:url("../images/dy_pic091.jpg");width:100%; overflow:hidden;}
 .bodyCon07 .teacher{width:1100px;height:530px;position:relative;margin:0 auto; overflow:hidden;background:url(../images/dy_pic09.jpg);}
 .bodyCon07 .teacher .teacherPic{width:1100px;height:360px;position:absolute; top:130px;}
 .bodyCon07 .teacher .teacherPic .content{width:180px;height:360px;float:left;position:relative;overflow:hidden;margin-left:3px;}

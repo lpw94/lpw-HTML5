@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>滚动轮播学习控件</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/scroll1.css"/>
+	
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var liw = $(".current_box .current").outerWidth()*$(".current_box li").length*2;
+			//console.log(liw);
+			$(".current_box").width(liw);
+			$(".img_box ul li").hide();
+			$(".img_box ul li:first").show();
+			var  timer = "";
+			var num = 0;
+			
+			
+			$(".current_box li").click(function(){
+				var index = $(this).index();
+				$(".img_box ul li").eq(index).fadeIn(150).siblings().hide();
+				$(this).addClass("current").siblings().removeClass("current");
+				num = index;
+			});			
+			
+			timer = setInterval(go,3000); 
+			
+			$(".scroll").hover(function(){
+				clearInterval(timer);
+			},function(){
+				timer = setInterval(go,3000); 
+			});
+
+			
+			
+			$(".left").on("click",function(){
+				go(-1)
+			});
+			
+			$(".right").on("click",function(){
+				 go(1);
+			});
+			
+			function go(set){				
+				//num = $(".img_box ul li").index();
+				if (set<0) {
+					num--;
+				} else{
+					num++;
+				}
+				
+				if (num>$(".img_box ul li").length-1) {
+					num = 0;
+				}else if(num<0){
+					num = $(".img_box ul li").length-1;
+				}
+				console.log(num);
+				$(".img_box ul li").eq(num).fadeIn(150).siblings().hide();
+				$(".current_box li").eq(num).addClass("current").siblings().removeClass("current");
+			}
+
+		
+		});
+	</script>
+</head>
+<body>
+	<div class="scroll">
+		<div class="arrow left">&lt;</div>
+		<div class="arrow right">&gt;</div>
+			<div class="img_box">
+				<ul>
+					<li><img src="img/1.jpg"/></li>
+					<li><img src="img/2.jpg"/></li>
+					<li><img src="img/3.jpg"/></li>
+					<li><img src="img/4.jpg"/></li>
+				</ul>
+			</div>
+			
+			<ul class="current_box">
+				<li class="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+	</div>
+</body>
+</html>
