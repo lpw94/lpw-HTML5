@@ -36,9 +36,15 @@ body{
 		height: 300px;
 		clear: both;
 		overflow: hidden;
+		
+	}
+	.img_box ul{
+		position: relative;
 	}
 	.img_box ul li{
-		float: left;
+		position: absolute;
+		left: 0;
+		top: 0;
 		width: 600px;
 		height: 300px;
 	}

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>滚动轮播学习控件</title>
+	<title>滚动轮播控件</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
+	<link rel="stylesheet" type="text/css" href="css/a.css"/>
 	
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -20,9 +20,8 @@
 			
 			$(".current_box li").click(function(){
 				var index = $(this).index();
-				$(".img_box ul li").eq(index).stop().fadeIn(1000).siblings().stop().fedeOut(1000);
+				$(".img_box ul li").eq(index).stop(true,false).fadeIn(1000).siblings().stop(true,false).fadeOut();
 				$(this).addClass("current").siblings().removeClass("current");
-				num = index;
 			});			
 			
 			timer = setInterval(go,3000); 
@@ -50,14 +49,14 @@
 				} else{
 					num++;
 				}
-				
+				console.log(set);
 				if (num>$(".img_box ul li").length-1) {
 					num = 0;
 				}else if(num<0){
 					num = $(".img_box ul li").length-1;
 				}
 				console.log(num);
-				$(".img_box ul li").eq(num).stop().fadeIn(1000).siblings().stop().fadeOut();
+				$(".img_box ul li").eq(num).stop(true,false).fadeIn(1000).siblings().stop(true,false).fadeOut();
 				$(".current_box li").eq(num).addClass("current").siblings().removeClass("current");
 			}
 
