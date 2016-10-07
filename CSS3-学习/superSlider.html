@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0057)http://www.superslide2.com/otherDemo/2.19/fullSlide1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Language" content="zh-CN">
+		<meta name="Keywords" content="SuperSlide,横向全屏焦点图">
+		<meta name="Description" content="SuperSlide,横向全屏焦点图">
+		<title>横向全屏焦点图 - SuperSlide</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			document.oncontextmenu = function() {
+				return false
+			}
+		</script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			body {
+				background: #fff;
+				font: normal 12px/22px 宋体;
+				width: 100%;
+			}
+			
+			img {
+				border: 0;
+			}
+			
+			a {
+				text-decoration: none;
+				color: #333;
+			}
+			
+			a:hover {
+				color: #1974A1;
+			}
+			
+			#footer {
+				text-align: center;
+			}
+			
+			.fullSlide {
+				width: 100%;
+				position: relative;
+				height: 460px;
+				background: #000;
+			}
+			
+			.fullSlide .bd {
+				margin: 0 auto;
+				position: relative;
+				z-index: 0;
+				overflow: hidden;
+			}
+			
+			.fullSlide .bd ul {
+				width: 100% !important;
+			}
+			
+			.fullSlide .bd li {
+				width: 100% !important;
+				height: 460px;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.fullSlide .bd li a {
+				display: block;
+				height: 460px;
+			}
+			
+			.fullSlide .hd {
+				width: 100%;
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+				left: 0;
+				height: 30px;
+				line-height: 30px;
+				background: url(images/touming.png) repeat-x;
+				text-align: center;
+				_background: #000;
+				_filter: alpha(opacity=60);
+			}
+			
+			.fullSlide .hd ul {
+				text-align: center;
+				padding-top: 5px;
+			}
+			
+			.fullSlide .hd ul li {
+				cursor: pointer;
+				display: inline-block;
+				*display: inline;
+				zoom: 1;
+				width: 8px;
+				height: 8px;
+				margin: 5px;
+				background: url(images/tg_flash_p.png) -18px 0;
+				overflow: hidden;
+				line-height: 9999px;
+			}
+			
+			.fullSlide .hd ul .on {
+				background-position: 0 0;
+			}
+		</style>
+		<div class="fullSlide">
+			<div class="bd">
+				<ul style="position: relative; width: 1893px; height: 460px;">
+					<li style="position: absolute; width: 1893px; left: 0px; top: 0px; display: none; background: url(http://www.superslide2.com/otherDemo/2.19/images/1.jpg) 50% 0px no-repeat rgb(25, 73, 130);">
+						<a target="_blank" href="http://www.superslide2.com/"></a>
+					</li>
+					<li style="position: absolute; width: 1893px; left: 0px; top: 0px; display: list-item; background: url(http://www.superslide2.com/otherDemo/2.19/images/2.jpg) 50% 0px no-repeat rgb(21, 24, 30);">
+						<a target="_blank" href="http://www.superslide2.com/"></a>
+					</li>
+					<li style="position: absolute; width: 1893px; left: 0px; top: 0px; display: none; background: url(http://www.superslide2.com/otherDemo/2.19/images/3.jpg) 50% 0px no-repeat rgb(11, 11, 11);">
+						<a target="_blank" href="http://www.superslide2.com/"></a>
+					</li>
+					<li style="position: absolute; width: 1893px; left: 0px; top: 0px; display: none; background: url(http://www.superslide2.com/otherDemo/2.19/images/4.jpg) 50% 0px no-repeat rgb(0, 0, 0);">
+						<a target="_blank" href="http://www.superslide2.com/"></a>
+					</li>
+					<li style="position: absolute; width: 1893px; left: 0px; top: 0px; display: none; background: url(http://www.superslide2.com/otherDemo/2.19/images/5.jpg) 50% 0px no-repeat rgb(4, 48, 75);">
+						<a target="_blank" href="http://www.superslide2.com/"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="hd">
+				<ul>
+					<li class="">1</li>
+					<li class="on">2</li>
+					<li class="">3</li>
+					<li class="">4</li>
+					<li class="">5</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			jQuery(".fullSlide").slide({
+				titCell: ".hd ul",
+				mainCell: ".bd ul",
+				effect: "fold",
+				autoPlay: true,
+				autoPage: true,
+				trigger: "click"
+			});
+		</script>
+		<div id="footer">Copyright ©2011-2013 大话主席
+			<a target="_blank" href="http://www.superslide2.com/">www.superslide2.com</a>
+		</div>
+
+		<audio controls="controls" style="display: none;"></audio>
+	</body>
+	<style type="text/css">
+		#yddContainer {
+			display: block;
+			font-family: Microsoft YaHei;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			top: -4px;
+			left: -4px;
+			font-size: 12px;
+			border: 1px solid
+		}
+		
+		#yddTop {
+			display: block;
+			height: 22px
+		}
+		
+		#yddTopBorderlr {
+			display: block;
+			position: static;
+			height: 17px;
+			padding: 2px 28px;
+			line-height: 17px;
+			font-size: 12px;
+			color: #5079bb;
+			font-weight: bold;
+			border-style: none solid;
+			border-width: 1px
+		}
+		
+		#yddTopBorderlr .ydd-sp {
+			position: absolute;
+			top: 2px;
+			height: 0;
+			overflow: hidden
+		}
+		
+		.ydd-icon {
+			left: 5px;
+			width: 17px;
+			padding: 0px 0px 0px 0px;
+			padding-top: 17px;
+			background-position: -16px -44px
+		}
+		
+		.ydd-close {
+			right: 5px;
+			width: 16px;
+			padding-top: 16px;
+			background-position: left -44px
+		}
+		
+		#yddKeyTitle {
+			float: left;
+			text-decoration: none
+		}
+		
+		#yddMiddle {
+			display: block;
+			margin-bottom: 10px
+		}
+		
+		.ydd-tabs {
+			display: block;
+			margin: 5px 0;
+			padding: 0 5px;
+			height: 18px;
+			border-bottom: 1px solid
+		}
+		
+		.ydd-tab {
+			display: block;
+			float: left;
+			height: 18px;
+			margin: 0 5px -1px 0;
+			padding: 0 4px;
+			line-height: 18px;
+			border: 1px solid;
+			border-bottom: none
+		}
+		
+		.ydd-trans-container {
+			display: block;
+			line-height: 160%
+		}
+		
+		.ydd-trans-container a {
+			text-decoration: none;
+		}
+		
+		#yddBottom {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 22px;
+			line-height: 22px;
+			overflow: hidden;
+			background-position: left -22px
+		}
+		
+		.ydd-padding010 {
+			padding: 0 10px
+		}
+		
+		#yddWrapper {
+			color: #252525;
+			z-index: 10001;
+			background: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);
+		}
+		
+		#yddContainer {
+			background: #fff;
+			border-color: #4b7598
+		}
+		
+		#yddTopBorderlr {
+			border-color: #f0f8fc
+		}
+		
+		#yddWrapper .ydd-sp {
+			background-image: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)
+		}
+		
+		#yddWrapper a,
+		#yddWrapper a:hover,
+		#yddWrapper a:visited {
+			color: #50799b
+		}
+		
+		#yddWrapper .ydd-tabs {
+			color: #959595
+		}
+		
+		.ydd-tabs,
+		.ydd-tab {
+			background: #fff;
+			border-color: #d5e7f3
+		}
+		
+		#yddBottom {
+			color: #363636
+		}
+		
+		#yddWrapper {
+			min-width: 250px;
+			max-width: 400px;
+		}
+	</style>
+
+</html>
